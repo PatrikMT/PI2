@@ -1,0 +1,236 @@
+/* styles.css */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #181a20;
+  color: #f1f1f1;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#chat-container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+#messages {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  margin: 0;
+  padding: 16px 8px 0 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch;
+  scrollbar-width: thin;
+  scrollbar-color: #2d8cff #23272f;
+}
+
+.message-row {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 4px;
+  justify-content: flex-end;
+}
+
+.message-row.user {
+  justify-content: flex-end;
+}
+
+.message-row.ia {
+  justify-content: flex-start;
+}
+
+.message {
+  padding: 12px 16px;
+  border-radius: 18px;
+  max-width: 75%;
+  font-size: 15px;
+  line-height: 1.5;
+  word-break: break-word;
+  box-shadow: 0 2px 8px #0002;
+  display: inline-block;
+}
+
+.message.user {
+  background: #064ce2;
+  color: #fff;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 18px;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  margin-right: 0;
+  margin-left: 40px;
+  align-self: flex-end;
+  justify-content: flex-end;
+}
+
+.message.ia {
+  background: #3f8ff1;
+  color: #fff;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 18px;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  margin-left: 0;
+  margin-right: 40px;
+  align-self: flex-start;
+  justify-content: flex-start;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin: 0 6px;
+  flex-shrink: 0;
+}
+
+.avatar.ia {
+  background: #2d8cff;
+  color: #fff;
+}
+
+.avatar.user {
+  background: #353a45;
+  color: #fff;
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+  padding: 12px 8px;
+  background: #23272f;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  box-shadow: 0 -2px 8px #0002;
+  margin-bottom: 15px;
+  margin-right: 15px;
+  margin-left: 15px;
+  border-radius: 18px;
+}
+
+#input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  background: #23272f;
+  color: #f1f1f1;
+  font-size: 15px;
+  outline: none;
+  transition: background 0.2s;
+  
+}
+
+#input:focus {
+  background: #262a33;
+}
+
+#send {
+  width: 22%;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  background: #2d8cff;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#send:hover {
+  background: #1a5fb4;
+}
+
+/* Estilos para o texto "Gemini can make mistakes..." (opcional) */
+#disclaimer {
+  font-size: 0.75em;
+  color: #9aa0a6;
+  text-align: center;
+  padding: 8px;
+}
+
+@media (max-width: 500px) {
+  #chat-container {
+    max-width: 98vw;
+    min-height: 80vh;
+    padding: 8px 2vw 8px 2vw;
+  }
+  .message.user, .message.ia {
+    max-width: 90vw;
+    font-size: 14px;
+    padding: 10px 10px;
+  }
+}
+
+.thinking-dots {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  min-width: 32px;
+}
+.thinking-dots span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: blink 1.4s infinite both;
+}
+.thinking-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.thinking-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+@keyframes blink {
+  0%, 80%, 100% { opacity: 0.7; }
+  40% { opacity: 0.2; }
+}
+
+/* Para navegadores baseados em Webkit (Chrome, Edge, Opera, Safari) */
+#messages::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+  transition: background 0.3s;
+}
+
+#messages::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+/* Quando o mouse está sobre a área de mensagens, mostra a barra */
+#messages:hover::-webkit-scrollbar-thumb {
+  background: #2d8cff;
+}
+
+#messages:hover::-webkit-scrollbar {
+  background: #23272f;
+}

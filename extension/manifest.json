@@ -1,0 +1,28 @@
+
+{
+  "manifest_version": 3,
+  "name": "Gemini Chat",
+  "version": "1.0.0",
+
+
+  "action": {
+  "default_title": "Abrir Chat Gemini"
+  },
+
+  "permissions": [
+   "activeTab",
+   "scripting",
+   "sidePanel",
+   "contextMenus",
+   "storage"],
+
+  "host_permissions": ["http://localhost:5000/","https://api.mercadolibre.com/*"],
+
+  "side_panel": {
+    "default_path": "sidepanel.html",
+    "open_panel_on_action_click": true
+  },
+  "background": {
+    "service_worker": "service_worker.js"
+  }
+}

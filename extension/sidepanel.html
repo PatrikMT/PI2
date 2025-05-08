@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Assistente</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="chat-container">
+    <div id="messages"></div>
+    <div class="input-row">
+      <input type="text" id="input" placeholder="Digite algo..." autocomplete="off" />
+    </div>
+    <div id="quick-suggestions">
+      <button onclick="sendQuick('Explique o que é SQL Injection')">SQL Injection</button>
+      <button onclick="sendQuick('Me dê um exercício de Python')">Exercício Python</button>
+    </div>
+  </div>
+  <script src="sidepanel.js"></script>
+</body>
+</html>
